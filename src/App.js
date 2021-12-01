@@ -11,13 +11,23 @@ function App() {
     return remainingContacts[random];
   }
   function addStar() {
+    
     setContactList(contactList.concat([getRandomStar()]));
+  }
+  function sortByName() {
+    const list = contactList.sort((a, b) => a.name.localeCompare(b.name));
+    setContactList([...list]);
+  }
+  function sortByPopularity() {
+    setContactList([...contactList.sort((a, b) => b.popularity-a.popularity)]);
   }
 
   return (
     <div className="App">
       <h1>IronContacts</h1>
       <button onClick={addStar}>Add Random Contact</button>
+      <button onClick={sortByPopularity}>Sort by Popularity</button>
+      <button onClick={sortByName}>Sort by Name</button>
       <table>
         <thead>
           <tr>
