@@ -36,6 +36,7 @@ function App() {
             <th>Popularity</th>
             <th>Won Oscar</th>
             <th>Won Emmy</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -46,8 +47,9 @@ function App() {
               </td>
               <td>{contact.name}</td>
               <td>{contact.popularity}</td>
-              {contact.wonOscar && <td>🏆</td>}
-              {contact.wonEmmy && <td>🏆</td>}
+              <td>{contact.wonOscar && <span>🏆</span>}</td>
+              <td>{contact.wonEmmy && <span>🏆</span>}</td>
+              <td><button onClick={sortByName}>Delete</button></td>
             </tr>
           ))}
         </tbody>
