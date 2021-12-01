@@ -13,12 +13,16 @@ function App() {
           <th>Picture</th>
           <th>Name</th>
           <th>Popularity</th>
+          <th>Won Oscar</th>
+          <th>Won Emmy</th>
         </tr>
         {contactList.map((contact, i) => (
         <tr key={i}>
           <td><img src={contact.pictureUrl} alt={contact.name}/></td>
           <td>{contact.name}</td>
           <td>{contact.popularity}</td>
+          {contact.wonOscar && <td>🏆</td>}
+          {contact.wonEmmy && <td>🏆</td>}
         </tr>
         ))}
       </table>
